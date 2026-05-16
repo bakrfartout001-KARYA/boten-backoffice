@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clients · BOTEN RENT CAR · Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="side-brand">
+    <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" width="42" height="22">
+      <path d="M10,28 Q12,18 25,15 L40,12 Q50,10 60,12 L75,15 Q88,18 90,28 L85,30 Q70,22 50,22 Q30,22 15,30 Z" fill="#fff"/>
+      <ellipse cx="22" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+      <ellipse cx="78" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+    </svg>
+    <div><span class="bn">BOTEN</span><span class="bs">RENT CAR · Admin</span></div>
+  </div>
+  <nav class="side-nav">
+    <p class="nav-label">Pilotage</p>
+    <a href="dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+    <a href="cars.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>Voitures <span class="badge">24</span></a>
+    <a href="bookings.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Réservations <span class="badge alert">7</span></a>
+    <a href="clients.html" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>Clients</a>
+    <a href="contracts.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Contrats</a>
+    <p class="nav-label">Analyse</p>
+    <a href="reports.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Rapports</a>
+    <p class="nav-label">Système</p>
+    <a href="users.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Utilisateurs</a>
+  </nav>
+  <div class="side-foot">
+    <div class="side-user"><div class="avatar">MA</div><div><strong>Mohamed Admin</strong><span>Super Admin</span></div></div>
+    <a href="index.html" class="logout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg></a>
+  </div>
+</aside>
+
+<main class="main">
+  <header class="topbar">
+    <div>
+      <h1>Clients</h1>
+      <p class="muted">156 clients enregistrés · 89 actifs ce mois</p>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn-ghost btn-sm">Exporter</button>
+      <button class="btn-primary btn-sm">+ Ajouter un client</button>
+    </div>
+  </header>
+
+  <!-- KPIs -->
+  <section class="kpis">
+    <article class="kpi"><div class="kpi-top"><span class="kpi-label">Total clients</span></div><div class="kpi-value">156</div><div class="kpi-foot muted">+5 cette semaine</div></article>
+    <article class="kpi"><div class="kpi-top"><span class="kpi-label">Clients VIP</span><span class="kpi-trend up">★</span></div><div class="kpi-value">12</div><div class="kpi-foot muted">5+ locations cette année</div></article>
+    <article class="kpi"><div class="kpi-top"><span class="kpi-label">Nouveaux ce mois</span><span class="kpi-trend up">↑ 23%</span></div><div class="kpi-value">28</div><div class="kpi-foot muted">vs 22 le mois passé</div></article>
+    <article class="kpi"><div class="kpi-top"><span class="kpi-label">Taux de fidélité</span></div><div class="kpi-value">42<em>%</em></div><div class="kpi-foot muted">clients récurrents</div></article>
+  </section>
+
+  <section class="filters">
+    <div class="filter-group"><input type="text" placeholder="Rechercher par nom, CIN, téléphone, email..." class="filter-search"></div>
+    <select class="filter-select"><option>Tous les types</option><option>Particulier</option><option>Entreprise</option><option>VIP</option></select>
+    <select class="filter-select"><option>Toutes les nationalités</option><option>Marocaine</option><option>Française</option><option>Espagnole</option><option>Autre</option></select>
+  </section>
+
+  <section class="card">
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Contact</th>
+            <th>CIN / Passeport</th>
+            <th>Permis</th>
+            <th>Locations</th>
+            <th>Total dépensé</th>
+            <th>Dernière location</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-user"><div class="avatar sm">AB</div><div><strong>Anas Berrada</strong><span class="muted">Particulier · Maroc</span></div></div></td>
+            <td><span>+212 6 12 34 56 78</span><br><span class="muted">anas.b@email.com</span></td>
+            <td>AB123456</td>
+            <td>P-789456</td>
+            <td><strong>8</strong></td>
+            <td><strong>32 400 DH</strong></td>
+            <td>13/05/26</td>
+            <td><span class="pill confirmed">VIP ★</span></td>
+            <td class="row-actions"><button class="btn-mini">👁</button><button class="btn-mini">✎</button></td>
+          </tr>
+          <tr>
+            <td><div class="td-user"><div class="avatar sm">SB</div><div><strong>Sara Bennani</strong><span class="muted">Particulier · Maroc</span></div></div></td>
+            <td><span>+212 6 65 43 21 09</span><br><span class="muted">sara.b@email.com</span></td>
+            <td>BE789012</td>
+            <td>P-456123</td>
+            <td><strong>5</strong></td>
+            <td><strong>14 250 DH</strong></td>
+            <td>22/05/26</td>
+            <td><span class="pill active">Actif</span></td>
+            <td class="row-actions"><button class="btn-mini">👁</button><button class="btn-mini">✎</button></td>
+          </tr>
+          <tr>
+            <td><div class="td-user"><div class="avatar sm">KT</div><div><strong>Karim Tazi</strong><span class="muted">Entreprise · Maroc</span></div></div></td>
+            <td><span>+212 6 11 22 33 44</span><br><span class="muted">k.tazi@societe.ma</span></td>
+            <td>TA345678</td>
+            <td>P-321789</td>
+            <td><strong>12</strong></td>
+            <td><strong>48 900 DH</strong></td>
+            <td>16/05/26</td>
+            <td><span class="pill confirmed">VIP ★</span></td>
+            <td class="row-actions"><button class="btn-mini">👁</button><button class="btn-mini">✎</button></td>
+          </tr>
+          <tr>
+            <td><div class="td-user"><div class="avatar sm">YE</div><div><strong>Youssef El Amrani</strong><span class="muted">Particulier · Maroc</span></div></div></td>
+            <td><span>+212 6 99 88 77 66</span><br><span class="muted">youssef.e@email.com</span></td>
+            <td>EA567890</td>
+            <td>P-852741</td>
+            <td><strong>1</strong></td>
+            <td><strong>960 DH</strong></td>
+            <td>16/05/26</td>
+            <td><span class="pill pending">Nouveau</span></td>
+            <td class="row-actions"><button class="btn-mini">👁</button><button class="btn-mini">✎</button></td>
+          </tr>
+          <tr>
+            <td><div class="td-user"><div class="avatar sm">FZ</div><div><strong>Fatima Zahra Idrissi</strong><span class="muted">Particulier · Maroc</span></div></div></td>
+            <td><span>+212 6 55 44 33 22</span><br><span class="muted">fz.idrissi@email.com</span></td>
+            <td>ID234567</td>
+            <td>P-963258</td>
+            <td><strong>3</strong></td>
+            <td><strong>4 100 DH</strong></td>
+            <td>15/05/26</td>
+            <td><span class="pill active">Actif</span></td>
+            <td class="row-actions"><button class="btn-mini">👁</button><button class="btn-mini">✎</button></td>
+          </tr>
+          <tr>
+            <td><div class="td-user"><div class="avatar sm">JM</div><div><strong>Jean Martin</strong><span class="muted">Touriste · France</span></div></div></td>
+            <td><span>+33 6 11 22 33 44</span><br><span class="muted">j.martin@email.fr</span></td>
+            <td>FR-PASS-123</td>
+            <td>FR-PERM-456</td>
+            <td><strong>2</strong></td>
+            <td><strong>5 800 DH</strong></td>
+            <td>30/04/26</td>
+            <td><span class="pill active">Actif</span></td>
+            <td class="row-actions"><button class="btn-mini">👁</button><button class="btn-mini">✎</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="pagination">
+    <span class="muted">Affichage de 1 à 6 sur 156 clients</span>
+    <div class="pager"><button>←</button><button class="on">1</button><button>2</button><button>...</button><button>26</button><button>→</button></div>
+  </div>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voitures · BOTEN RENT CAR · Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="side-brand">
+    <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" width="42" height="22">
+      <path d="M10,28 Q12,18 25,15 L40,12 Q50,10 60,12 L75,15 Q88,18 90,28 L85,30 Q70,22 50,22 Q30,22 15,30 Z" fill="#fff"/>
+      <ellipse cx="22" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+      <ellipse cx="78" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+    </svg>
+    <div><span class="bn">BOTEN</span><span class="bs">RENT CAR · Admin</span></div>
+  </div>
+  <nav class="side-nav">
+    <p class="nav-label">Pilotage</p>
+    <a href="dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+    <a href="cars.html" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>Voitures <span class="badge">24</span></a>
+    <a href="bookings.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Réservations <span class="badge alert">7</span></a>
+    <a href="clients.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clients</a>
+    <a href="contracts.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>Contrats</a>
+    <p class="nav-label">Analyse</p>
+    <a href="reports.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Rapports</a>
+    <p class="nav-label">Système</p>
+    <a href="users.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Utilisateurs</a>
+  </nav>
+  <div class="side-foot">
+    <div class="side-user">
+      <div class="avatar">MA</div>
+      <div><strong>Mohamed Admin</strong><span>Super Admin</span></div>
+    </div>
+    <a href="index.html" class="logout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg></a>
+  </div>
+</aside>
+
+<main class="main">
+  <header class="topbar">
+    <div>
+      <h1>Voitures</h1>
+      <p class="muted">24 voitures · 18 louées · 6 disponibles</p>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn-ghost btn-sm">Exporter</button>
+      <button class="btn-primary btn-sm" onclick="document.getElementById('addCarModal').classList.add('open')">+ Ajouter une voiture</button>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <section class="filters">
+    <div class="filter-group">
+      <input type="text" placeholder="Rechercher par marque, modèle, immatriculation..." class="filter-search">
+    </div>
+    <select class="filter-select"><option>Toutes les catégories</option><option>Économique</option><option>Berline</option><option>SUV</option><option>Premium</option><option>Luxe</option></select>
+    <select class="filter-select"><option>Tous les statuts</option><option>Disponible</option><option>Louée</option><option>Maintenance</option></select>
+    <select class="filter-select"><option>Toutes les villes</option><option>Casablanca</option><option>Marrakech</option><option>Rabat</option><option>Tanger</option><option>Agadir</option><option>Fès</option></select>
+    <div class="view-toggle">
+      <button class="on">Grille</button>
+      <button>Liste</button>
+    </div>
+  </section>
+
+  <!-- Cars grid -->
+  <section class="cars-grid">
+
+    <article class="cc">
+      <div class="cc-img" style="background:linear-gradient(135deg,#1f1f1f,#0a0a0a);">
+        <svg viewBox="0 0 200 100"><path d="M15,72 Q22,40 60,35 L140,35 Q178,40 185,72 L172,77 Q150,58 100,58 Q50,58 28,77 Z" fill="#fafafa"/><circle cx="55" cy="80" r="11" fill="#0a0a0a" stroke="#fafafa" stroke-width="2"/><circle cx="145" cy="80" r="11" fill="#0a0a0a" stroke="#fafafa" stroke-width="2"/><ellipse cx="38" cy="58" rx="9" ry="2.5" fill="#ff7a18"/><ellipse cx="162" cy="58" rx="9" ry="2.5" fill="#ff7a18"/></svg>
+        <span class="cc-status booked">Louée</span>
+      </div>
+      <div class="cc-body">
+        <div class="cc-head">
+          <h3>Renault Clio</h3>
+          <span class="cc-plate">12345-A-1</span>
+        </div>
+        <ul class="cc-specs"><li>Auto</li><li>Essence</li><li>5 places</li></ul>
+        <div class="cc-foot">
+          <div class="cc-price"><strong>320</strong><span>DH/jour</span></div>
+          <div class="cc-actions">
+            <button class="icon-mini" title="Modifier">✎</button>
+            <button class="icon-mini" title="Voir">👁</button>
+            <button class="icon-mini danger" title="Supprimer">🗑</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cc">
+      <div class="cc-img" style="background:linear-gradient(135deg,#f4f4f3,#e7e3da);">
+        <svg viewBox="0 0 200 100"><path d="M20,70 Q25,45 60,40 L140,40 Q175,45 180,70 L170,75 Q150,60 100,60 Q50,60 30,75 Z" fill="#1a1a1a"/><circle cx="55" cy="78" r="10" fill="#0a0a0a"/><circle cx="145" cy="78" r="10" fill="#0a0a0a"/><ellipse cx="40" cy="60" rx="8" ry="2" fill="#ff7a18"/><ellipse cx="160" cy="60" rx="8" ry="2" fill="#ff7a18"/></svg>
+        <span class="cc-status avail">Disponible</span>
+      </div>
+      <div class="cc-body">
+        <div class="cc-head">
+          <h3>Dacia Sandero</h3>
+          <span class="cc-plate">67890-B-2</span>
+        </div>
+        <ul class="cc-specs"><li>Manuelle</li><li>Diesel</li><li>5 places</li></ul>
+        <div class="cc-foot">
+          <div class="cc-price"><strong>250</strong><span>DH/jour</span></div>
+          <div class="cc-actions">
+            <button class="icon-mini">✎</button>
+            <button class="icon-mini">👁</button>
+            <button class="icon-mini danger">🗑</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cc">
+      <div class="cc-img" style="background:linear-gradient(135deg,#eee9e0,#d6cfc0);">
+        <svg viewBox="0 0 200 100"><path d="M18,70 Q25,30 60,25 L140,25 Q175,30 182,70 L170,78 Q150,55 100,55 Q50,55 30,78 Z" fill="#2b2b2b"/><rect x="55" y="32" width="90" height="20" fill="#2b2b2b"/><circle cx="55" cy="80" r="12" fill="#0a0a0a"/><circle cx="145" cy="80" r="12" fill="#0a0a0a"/><ellipse cx="38" cy="58" rx="8" ry="2" fill="#ff7a18"/><ellipse cx="162" cy="58" rx="8" ry="2" fill="#ff7a18"/></svg>
+        <span class="cc-status booked">Louée</span>
+      </div>
+      <div class="cc-body">
+        <div class="cc-head">
+          <h3>Hyundai Tucson</h3>
+          <span class="cc-plate">11223-C-5</span>
+        </div>
+        <ul class="cc-specs"><li>Auto</li><li>Diesel</li><li>SUV</li></ul>
+        <div class="cc-foot">
+          <div class="cc-price"><strong>550</strong><span>DH/jour</span></div>
+          <div class="cc-actions">
+            <button class="icon-mini">✎</button>
+            <button class="icon-mini">👁</button>
+            <button class="icon-mini danger">🗑</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cc">
+      <div class="cc-img" style="background:linear-gradient(135deg,#f6f1e7,#e3d8c0);">
+        <svg viewBox="0 0 200 100"><path d="M12,72 Q20,42 60,37 L140,37 Q180,42 188,72 L175,77 Q150,60 100,60 Q50,60 25,77 Z" fill="#3a2f24"/><circle cx="55" cy="80" r="10" fill="#0a0a0a"/><circle cx="145" cy="80" r="10" fill="#0a0a0a"/><ellipse cx="38" cy="60" rx="9" ry="2.5" fill="#ff7a18"/><ellipse cx="162" cy="60" rx="9" ry="2.5" fill="#ff7a18"/></svg>
+        <span class="cc-status avail">Disponible</span>
+      </div>
+      <div class="cc-body">
+        <div class="cc-head">
+          <h3>Peugeot 508</h3>
+          <span class="cc-plate">44556-D-3</span>
+        </div>
+        <ul class="cc-specs"><li>Auto</li><li>Diesel</li><li>Berline</li></ul>
+        <div class="cc-foot">
+          <div class="cc-price"><strong>650</strong><span>DH/jour</span></div>
+          <div class="cc-actions">
+            <button class="icon-mini">✎</button>
+            <button class="icon-mini">👁</button>
+            <button class="icon-mini danger">🗑</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cc">
+      <div class="cc-img" style="background:linear-gradient(135deg,#0e0e10,#1a1a1f);">
+        <svg viewBox="0 0 200 100"><path d="M10,72 Q18,38 58,33 L142,33 Q182,38 190,72 L177,77 Q150,56 100,56 Q50,56 23,77 Z" fill="#0a0a0a" stroke="#ff7a18" stroke-width="1"/><circle cx="55" cy="80" r="11" fill="#1a1a1a" stroke="#ff7a18" stroke-width="1.5"/><circle cx="145" cy="80" r="11" fill="#1a1a1a" stroke="#ff7a18" stroke-width="1.5"/><ellipse cx="38" cy="58" rx="10" ry="3" fill="#ff7a18"/><ellipse cx="162" cy="58" rx="10" ry="3" fill="#ff7a18"/></svg>
+        <span class="cc-status booked">Louée</span>
+      </div>
+      <div class="cc-body">
+        <div class="cc-head">
+          <h3>Mercedes Classe C</h3>
+          <span class="cc-plate">77889-E-7</span>
+        </div>
+        <ul class="cc-specs"><li>Auto</li><li>Diesel</li><li>Premium</li></ul>
+        <div class="cc-foot">
+          <div class="cc-price"><strong>950</strong><span>DH/jour</span></div>
+          <div class="cc-actions">
+            <button class="icon-mini">✎</button>
+            <button class="icon-mini">👁</button>
+            <button class="icon-mini danger">🗑</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cc">
+      <div class="cc-img" style="background:linear-gradient(135deg,#1c1c1c,#000);">
+        <svg viewBox="0 0 200 100"><path d="M8,73 Q15,28 58,23 L142,23 Q185,28 192,73 L178,78 Q150,52 100,52 Q50,52 22,78 Z" fill="#fff"/><rect x="58" y="30" width="84" height="22" fill="#fff" rx="3"/><circle cx="55" cy="82" r="12" fill="#0a0a0a"/><circle cx="145" cy="82" r="12" fill="#0a0a0a"/><ellipse cx="38" cy="56" rx="10" ry="3" fill="#ff7a18"/><ellipse cx="162" cy="56" rx="10" ry="3" fill="#ff7a18"/></svg>
+        <span class="cc-status avail">Disponible</span>
+      </div>
+      <div class="cc-body">
+        <div class="cc-head">
+          <h3>Range Rover Sport</h3>
+          <span class="cc-plate">99001-F-9</span>
+        </div>
+        <ul class="cc-specs"><li>Auto</li><li>Diesel</li><li>Luxe 4x4</li></ul>
+        <div class="cc-foot">
+          <div class="cc-price"><strong>1800</strong><span>DH/jour</span></div>
+          <div class="cc-actions">
+            <button class="icon-mini">✎</button>
+            <button class="icon-mini">👁</button>
+            <button class="icon-mini danger">🗑</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="cc">
+      <div class="cc-img" style="background:linear-gradient(135deg,#e8e1d2,#d0c5ad);">
+        <svg viewBox="0 0 200 100"><path d="M15,70 Q22,42 58,38 L142,38 Q178,42 185,70 L172,76 Q150,58 100,58 Q50,58 28,76 Z" fill="#5a4a3a"/><circle cx="55" cy="78" r="10" fill="#0a0a0a"/><circle cx="145" cy="78" r="10" fill="#0a0a0a"/><ellipse cx="38" cy="58" rx="8" ry="2" fill="#ff7a18"/><ellipse cx="162" cy="58" rx="8" ry="2" fill="#ff7a18"/></svg>
+        <span class="cc-status maint">Maintenance</span>
+      </div>
+      <div class="cc-body">
+        <div class="cc-head">
+          <h3>Audi A3</h3>
+          <span class="cc-plate">33445-G-4</span>
+        </div>
+        <ul class="cc-specs"><li>Auto</li><li>Essence</li><li>Compact</li></ul>
+        <div class="cc-foot">
+          <div class="cc-price"><strong>700</strong><span>DH/jour</span></div>
+          <div class="cc-actions">
+            <button class="icon-mini">✎</button>
+            <button class="icon-mini">👁</button>
+            <button class="icon-mini danger">🗑</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <div class="pagination">
+    <span class="muted">Affichage de 1 à 8 sur 24 voitures</span>
+    <div class="pager">
+      <button>←</button>
+      <button class="on">1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>→</button>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===== MODAL: Ajouter une voiture ===== -->
+<div class="modal" id="addCarModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2>Ajouter une voiture</h2>
+      <button class="close-btn" onclick="document.getElementById('addCarModal').classList.remove('open')">✕</button>
+    </div>
+
+    <form class="form" onsubmit="event.preventDefault(); alert('Démo : la voiture serait enregistrée dans la base de données.'); document.getElementById('addCarModal').classList.remove('open');">
+
+      <div class="form-section">
+        <h3>Informations principales</h3>
+        <div class="form-row">
+          <label class="field"><span>Marque</span><input type="text" placeholder="ex. Mercedes" required></label>
+          <label class="field"><span>Modèle</span><input type="text" placeholder="ex. Classe C" required></label>
+        </div>
+        <div class="form-row">
+          <label class="field"><span>Année</span><input type="number" placeholder="2024" min="2000" max="2026"></label>
+          <label class="field"><span>Immatriculation</span><input type="text" placeholder="12345-A-1" required></label>
+        </div>
+        <div class="form-row">
+          <label class="field">
+            <span>Catégorie</span>
+            <select><option>Économique</option><option>Berline</option><option>SUV</option><option>Premium</option><option>Luxe</option></select>
+          </label>
+          <label class="field">
+            <span>Ville de base</span>
+            <select><option>Casablanca</option><option>Marrakech</option><option>Rabat</option><option>Tanger</option><option>Agadir</option><option>Fès</option></select>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Caractéristiques</h3>
+        <div class="form-row">
+          <label class="field">
+            <span>Transmission</span>
+            <select><option>Manuelle</option><option>Automatique</option></select>
+          </label>
+          <label class="field">
+            <span>Carburant</span>
+            <select><option>Diesel</option><option>Essence</option><option>Hybride</option><option>Électrique</option></select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="field"><span>Nombre de places</span><input type="number" value="5" min="2" max="9"></label>
+          <label class="field"><span>Nombre de portes</span><input type="number" value="5" min="2" max="5"></label>
+        </div>
+        <div class="form-row">
+          <label class="field check-list">
+            <span>Équipements</span>
+            <div class="chips">
+              <label><input type="checkbox" checked> Climatisation</label>
+              <label><input type="checkbox" checked> GPS</label>
+              <label><input type="checkbox"> Bluetooth</label>
+              <label><input type="checkbox"> Caméra recul</label>
+              <label><input type="checkbox"> Sièges cuir</label>
+              <label><input type="checkbox"> Toit ouvrant</label>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Tarification</h3>
+        <div class="form-row">
+          <label class="field"><span>Prix / jour (DH)</span><input type="number" placeholder="320" required></label>
+          <label class="field"><span>Prix / semaine (DH)</span><input type="number" placeholder="1900"></label>
+        </div>
+        <div class="form-row">
+          <label class="field"><span>Prix / mois (DH)</span><input type="number" placeholder="7500"></label>
+          <label class="field"><span>Caution (DH)</span><input type="number" placeholder="3000"></label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Photos</h3>
+        <div class="upload">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          <p><strong>Cliquez pour ajouter des photos</strong> ou glissez-déposez</p>
+          <span class="muted">PNG, JPG jusqu'à 5MB · 6 photos maximum</span>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button type="button" class="btn-ghost" onclick="document.getElementById('addCarModal').classList.remove('open')">Annuler</button>
+        <button type="submit" class="btn-primary">Enregistrer la voiture</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

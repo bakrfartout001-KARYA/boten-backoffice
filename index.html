@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion · BOTEN RENT CAR · Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="login-page">
+
+<div class="login-bg">
+  <div class="login-glow"></div>
+</div>
+
+<div class="login-wrap">
+  <div class="login-card">
+    <div class="login-brand">
+      <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" width="60" height="30">
+        <path d="M10,28 Q12,18 25,15 L40,12 Q50,10 60,12 L75,15 Q88,18 90,28 L85,30 Q70,22 50,22 Q30,22 15,30 Z" fill="#0c0c0d"/>
+        <ellipse cx="22" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+        <ellipse cx="78" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+      </svg>
+      <h1 class="brand-text">BOTEN<em>RENT CAR</em></h1>
+      <p class="brand-sub">Espace administration</p>
+    </div>
+
+    <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+      <label class="field">
+        <span>Email</span>
+        <input type="email" placeholder="admin@botenrentcar.ma" value="admin@botenrentcar.ma" required>
+      </label>
+
+      <label class="field">
+        <span>Mot de passe</span>
+        <input type="password" placeholder="••••••••" value="demo123" required>
+      </label>
+
+      <div class="login-options">
+        <label class="check">
+          <input type="checkbox" checked>
+          <span>Se souvenir de moi</span>
+        </label>
+        <a href="#">Mot de passe oublié ?</a>
+      </div>
+
+      <button type="submit" class="btn-primary btn-full">Se connecter →</button>
+    </form>
+
+    <div class="login-demo">
+      <strong>Mode démo</strong> · Cliquez simplement sur "Se connecter"
+    </div>
+  </div>
+
+  <p class="login-foot">© 2026 BOTEN RENT CAR — Admin v1.0</p>
+</div>
+
+</body>
+</html>

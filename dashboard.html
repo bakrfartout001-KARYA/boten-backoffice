@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · BOTEN RENT CAR · Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <div class="side-brand">
+    <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" width="42" height="22">
+      <path d="M10,28 Q12,18 25,15 L40,12 Q50,10 60,12 L75,15 Q88,18 90,28 L85,30 Q70,22 50,22 Q30,22 15,30 Z" fill="#fff"/>
+      <ellipse cx="22" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+      <ellipse cx="78" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+    </svg>
+    <div>
+      <span class="bn">BOTEN</span>
+      <span class="bs">RENT CAR · Admin</span>
+    </div>
+  </div>
+
+  <nav class="side-nav">
+    <p class="nav-label">Pilotage</p>
+    <a href="dashboard.html" class="active">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </a>
+    <a href="cars.html">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+      Voitures <span class="badge">24</span>
+    </a>
+    <a href="bookings.html">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Réservations <span class="badge alert">7</span>
+    </a>
+    <a href="clients.html">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Clients
+    </a>
+    <a href="contracts.html">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+      Contrats
+    </a>
+
+    <p class="nav-label">Analyse</p>
+    <a href="reports.html">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Rapports
+    </a>
+    <a href="#">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Finances
+    </a>
+
+    <p class="nav-label">Système</p>
+    <a href="users.html">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Utilisateurs
+    </a>
+    <a href="#">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Paramètres
+    </a>
+  </nav>
+
+  <div class="side-foot">
+    <div class="side-user">
+      <div class="avatar">MA</div>
+      <div>
+        <strong>Mohamed Admin</strong>
+        <span>Super Admin</span>
+      </div>
+    </div>
+    <a href="index.html" class="logout" title="Déconnexion">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+    </a>
+  </div>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<main class="main">
+  <!-- Topbar -->
+  <header class="topbar">
+    <div>
+      <h1>Tableau de bord</h1>
+      <p class="muted">Bienvenue, voici un aperçu de votre activité aujourd'hui.</p>
+    </div>
+    <div class="topbar-actions">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Rechercher une voiture, client, réservation...">
+        <kbd>⌘ K</kbd>
+      </div>
+      <button class="icon-btn" title="Notifications">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <span class="dot"></span>
+      </button>
+      <a href="cars.html" class="btn-primary btn-sm">+ Nouvelle voiture</a>
+    </div>
+  </header>
+
+  <!-- KPI -->
+  <section class="kpis">
+    <article class="kpi">
+      <div class="kpi-top">
+        <span class="kpi-label">Revenu du mois</span>
+        <span class="kpi-trend up">↑ 12.4%</span>
+      </div>
+      <div class="kpi-value">142 350 <em>DH</em></div>
+      <div class="kpi-foot muted">vs 126 600 DH le mois passé</div>
+    </article>
+
+    <article class="kpi">
+      <div class="kpi-top">
+        <span class="kpi-label">Réservations</span>
+        <span class="kpi-trend up">↑ 8.1%</span>
+      </div>
+      <div class="kpi-value">87</div>
+      <div class="kpi-foot muted">dont 7 en attente de confirmation</div>
+    </article>
+
+    <article class="kpi">
+      <div class="kpi-top">
+        <span class="kpi-label">Voitures actives</span>
+        <span class="kpi-trend">—</span>
+      </div>
+      <div class="kpi-value">18<em>/24</em></div>
+      <div class="kpi-foot muted">6 disponibles · 18 louées</div>
+    </article>
+
+    <article class="kpi">
+      <div class="kpi-top">
+        <span class="kpi-label">Clients actifs</span>
+        <span class="kpi-trend up">↑ 5</span>
+      </div>
+      <div class="kpi-value">156</div>
+      <div class="kpi-foot muted">+5 nouveaux cette semaine</div>
+    </article>
+  </section>
+
+  <!-- Chart + Pending -->
+  <section class="row row-2">
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <h2>Revenus des 30 derniers jours</h2>
+          <p class="muted">Chiffre d'affaires quotidien en DH</p>
+        </div>
+        <div class="seg">
+          <button>7j</button>
+          <button class="on">30j</button>
+          <button>90j</button>
+          <button>1 an</button>
+        </div>
+      </div>
+      <div class="chart">
+        <!-- Simple SVG line chart -->
+        <svg viewBox="0 0 600 200" preserveAspectRatio="none" class="chart-svg">
+          <defs>
+            <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#ff7a18" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#ff7a18" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,150 L20,140 L40,145 L60,120 L80,130 L100,110 L120,115 L140,90 L160,100 L180,85 L200,95 L220,75 L240,85 L260,70 L280,80 L300,55 L320,65 L340,50 L360,60 L380,40 L400,55 L420,45 L440,60 L460,40 L480,50 L500,35 L520,45 L540,30 L560,40 L580,25 L600,35 L600,200 L0,200 Z" fill="url(#grad)"/>
+          <path d="M0,150 L20,140 L40,145 L60,120 L80,130 L100,110 L120,115 L140,90 L160,100 L180,85 L200,95 L220,75 L240,85 L260,70 L280,80 L300,55 L320,65 L340,50 L360,60 L380,40 L400,55 L420,45 L440,60 L460,40 L480,50 L500,35 L520,45 L540,30 L560,40 L580,25 L600,35" stroke="#ff7a18" stroke-width="2.5" fill="none"/>
+        </svg>
+        <div class="chart-labels">
+          <span>1 Mai</span><span>8 Mai</span><span>15 Mai</span><span>22 Mai</span><span>30 Mai</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <h2>En attente d'action</h2>
+          <p class="muted">7 réservations à valider</p>
+        </div>
+        <a href="bookings.html" class="link-arrow">Voir tout →</a>
+      </div>
+      <ul class="pending-list">
+        <li>
+          <div class="p-info">
+            <strong>Youssef El Amrani</strong>
+            <span class="muted">Renault Clio · 3 jours · Casablanca</span>
+          </div>
+          <div class="p-actions">
+            <button class="btn-mini ok">✓</button>
+            <button class="btn-mini no">✕</button>
+          </div>
+        </li>
+        <li>
+          <div class="p-info">
+            <strong>Sara Bennani</strong>
+            <span class="muted">Hyundai Tucson · 7 jours · Marrakech</span>
+          </div>
+          <div class="p-actions">
+            <button class="btn-mini ok">✓</button>
+            <button class="btn-mini no">✕</button>
+          </div>
+        </li>
+        <li>
+          <div class="p-info">
+            <strong>Karim Tazi</strong>
+            <span class="muted">Mercedes Classe C · 2 jours · Rabat</span>
+          </div>
+          <div class="p-actions">
+            <button class="btn-mini ok">✓</button>
+            <button class="btn-mini no">✕</button>
+          </div>
+        </li>
+        <li>
+          <div class="p-info">
+            <strong>Fatima Zahra</strong>
+            <span class="muted">Dacia Sandero · 5 jours · Tanger</span>
+          </div>
+          <div class="p-actions">
+            <button class="btn-mini ok">✓</button>
+            <button class="btn-mini no">✕</button>
+          </div>
+        </li>
+        <li>
+          <div class="p-info">
+            <strong>Anas Berrada</strong>
+            <span class="muted">Range Rover · 4 jours · Casablanca</span>
+          </div>
+          <div class="p-actions">
+            <button class="btn-mini ok">✓</button>
+            <button class="btn-mini no">✕</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Recent bookings table -->
+  <section class="card">
+    <div class="card-head">
+      <div>
+        <h2>Dernières réservations</h2>
+        <p class="muted">Activité récente sur la plateforme</p>
+      </div>
+      <a href="bookings.html" class="link-arrow">Tout voir →</a>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>N° Rés.</th>
+            <th>Client</th>
+            <th>Voiture</th>
+            <th>Période</th>
+            <th>Ville</th>
+            <th>Montant</th>
+            <th>Statut</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#BTN-2026-0142</strong></td>
+            <td>
+              <div class="td-user">
+                <div class="avatar sm">YE</div>
+                <span>Youssef El Amrani</span>
+              </div>
+            </td>
+            <td>Renault Clio</td>
+            <td>16/05 → 19/05</td>
+            <td>Casablanca</td>
+            <td><strong>960 DH</strong></td>
+            <td><span class="pill pending">En attente</span></td>
+            <td><a href="#" class="link-arrow">→</a></td>
+          </tr>
+          <tr>
+            <td><strong>#BTN-2026-0141</strong></td>
+            <td>
+              <div class="td-user">
+                <div class="avatar sm">SB</div>
+                <span>Sara Bennani</span>
+              </div>
+            </td>
+            <td>Hyundai Tucson</td>
+            <td>15/05 → 22/05</td>
+            <td>Marrakech</td>
+            <td><strong>3 850 DH</strong></td>
+            <td><span class="pill confirmed">Confirmée</span></td>
+            <td><a href="#" class="link-arrow">→</a></td>
+          </tr>
+          <tr>
+            <td><strong>#BTN-2026-0140</strong></td>
+            <td>
+              <div class="td-user">
+                <div class="avatar sm">KT</div>
+                <span>Karim Tazi</span>
+              </div>
+            </td>
+            <td>Mercedes Classe C</td>
+            <td>14/05 → 16/05</td>
+            <td>Rabat</td>
+            <td><strong>1 900 DH</strong></td>
+            <td><span class="pill active">En cours</span></td>
+            <td><a href="#" class="link-arrow">→</a></td>
+          </tr>
+          <tr>
+            <td><strong>#BTN-2026-0139</strong></td>
+            <td>
+              <div class="td-user">
+                <div class="avatar sm">FZ</div>
+                <span>Fatima Zahra Idrissi</span>
+              </div>
+            </td>
+            <td>Dacia Sandero</td>
+            <td>10/05 → 15/05</td>
+            <td>Tanger</td>
+            <td><strong>1 250 DH</strong></td>
+            <td><span class="pill done">Terminée</span></td>
+            <td><a href="#" class="link-arrow">→</a></td>
+          </tr>
+          <tr>
+            <td><strong>#BTN-2026-0138</strong></td>
+            <td>
+              <div class="td-user">
+                <div class="avatar sm">AB</div>
+                <span>Anas Berrada</span>
+              </div>
+            </td>
+            <td>Range Rover Sport</td>
+            <td>09/05 → 13/05</td>
+            <td>Casablanca</td>
+            <td><strong>7 200 DH</strong></td>
+            <td><span class="pill done">Terminée</span></td>
+            <td><a href="#" class="link-arrow">→</a></td>
+          </tr>
+          <tr>
+            <td><strong>#BTN-2026-0137</strong></td>
+            <td>
+              <div class="td-user">
+                <div class="avatar sm">LC</div>
+                <span>Laila Chraibi</span>
+              </div>
+            </td>
+            <td>Peugeot 508</td>
+            <td>08/05 → 11/05</td>
+            <td>Fès</td>
+            <td><strong>1 950 DH</strong></td>
+            <td><span class="pill cancelled">Annulée</span></td>
+            <td><a href="#" class="link-arrow">→</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Top cars + Recent activity -->
+  <section class="row row-2">
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <h2>Top voitures du mois</h2>
+          <p class="muted">Les plus louées</p>
+        </div>
+      </div>
+      <ul class="top-list">
+        <li>
+          <span class="rank">01</span>
+          <div class="t-info">
+            <strong>Renault Clio</strong>
+            <span class="muted">18 locations · 17 280 DH</span>
+          </div>
+          <div class="bar"><div style="width:92%"></div></div>
+        </li>
+        <li>
+          <span class="rank">02</span>
+          <div class="t-info">
+            <strong>Dacia Sandero</strong>
+            <span class="muted">15 locations · 11 250 DH</span>
+          </div>
+          <div class="bar"><div style="width:76%"></div></div>
+        </li>
+        <li>
+          <span class="rank">03</span>
+          <div class="t-info">
+            <strong>Hyundai Tucson</strong>
+            <span class="muted">11 locations · 18 150 DH</span>
+          </div>
+          <div class="bar"><div style="width:60%"></div></div>
+        </li>
+        <li>
+          <span class="rank">04</span>
+          <div class="t-info">
+            <strong>Mercedes Classe C</strong>
+            <span class="muted">8 locations · 22 800 DH</span>
+          </div>
+          <div class="bar"><div style="width:48%"></div></div>
+        </li>
+        <li>
+          <span class="rank">05</span>
+          <div class="t-info">
+            <strong>Range Rover Sport</strong>
+            <span class="muted">5 locations · 27 000 DH</span>
+          </div>
+          <div class="bar"><div style="width:32%"></div></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <h2>Activité récente</h2>
+          <p class="muted">Les dernières actions</p>
+        </div>
+      </div>
+      <ul class="activity">
+        <li>
+          <span class="a-dot ok"></span>
+          <div>
+            <strong>Youssef El Amrani</strong> a effectué une nouvelle réservation
+            <span class="muted">Il y a 5 min · Renault Clio</span>
+          </div>
+        </li>
+        <li>
+          <span class="a-dot"></span>
+          <div>
+            Contrat <strong>#CTR-0089</strong> généré pour Sara Bennani
+            <span class="muted">Il y a 1 h · par Karim (Réceptionniste)</span>
+          </div>
+        </li>
+        <li>
+          <span class="a-dot warn"></span>
+          <div>
+            Voiture <strong>Audi A3</strong> marquée en maintenance
+            <span class="muted">Il y a 3 h · par Mohamed (Admin)</span>
+          </div>
+        </li>
+        <li>
+          <span class="a-dot ok"></span>
+          <div>
+            Paiement de <strong>3 850 DH</strong> reçu de Sara Bennani
+            <span class="muted">Il y a 5 h · CMI</span>
+          </div>
+        </li>
+        <li>
+          <span class="a-dot"></span>
+          <div>
+            Nouveau client enregistré : <strong>Anas Berrada</strong>
+            <span class="muted">Hier · 14:32</span>
+          </div>
+        </li>
+        <li>
+          <span class="a-dot bad"></span>
+          <div>
+            Réservation <strong>#BTN-2026-0137</strong> annulée par le client
+            <span class="muted">Hier · 09:15</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>

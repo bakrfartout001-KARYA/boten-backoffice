@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapports · BOTEN RENT CAR · Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="side-brand">
+    <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" width="42" height="22">
+      <path d="M10,28 Q12,18 25,15 L40,12 Q50,10 60,12 L75,15 Q88,18 90,28 L85,30 Q70,22 50,22 Q30,22 15,30 Z" fill="#fff"/>
+      <ellipse cx="22" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+      <ellipse cx="78" cy="32" rx="8" ry="3" fill="#ff7a18"/>
+    </svg>
+    <div><span class="bn">BOTEN</span><span class="bs">RENT CAR · Admin</span></div>
+  </div>
+  <nav class="side-nav">
+    <p class="nav-label">Pilotage</p>
+    <a href="dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+    <a href="cars.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>Voitures <span class="badge">24</span></a>
+    <a href="bookings.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Réservations <span class="badge alert">7</span></a>
+    <a href="clients.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Clients</a>
+    <a href="contracts.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Contrats</a>
+    <p class="nav-label">Analyse</p>
+    <a href="reports.html" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Rapports</a>
+    <p class="nav-label">Système</p>
+    <a href="users.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Utilisateurs</a>
+  </nav>
+  <div class="side-foot">
+    <div class="side-user"><div class="avatar">MA</div><div><strong>Mohamed Admin</strong><span>Super Admin</span></div></div>
+    <a href="index.html" class="logout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg></a>
+  </div>
+</aside>
+
+<main class="main">
+  <header class="topbar">
+    <div>
+      <h1>Rapports & Analyses</h1>
+      <p class="muted">Données financières et opérationnelles · Mai 2026</p>
+    </div>
+    <div class="topbar-actions">
+      <select class="filter-select" style="margin:0;"><option>Mai 2026</option><option>Avril 2026</option><option>Mars 2026</option></select>
+      <button class="btn-ghost btn-sm">Exporter PDF</button>
+      <button class="btn-primary btn-sm">Exporter Excel</button>
+    </div>
+  </header>
+
+  <!-- KPI Finance -->
+  <section class="kpis">
+    <article class="kpi"><div class="kpi-top"><span class="kpi-label">CA total</span><span class="kpi-trend up">↑ 12.4%</span></div><div class="kpi-value">142 350 <em>DH</em></div><div class="kpi-foot muted">87 locations</div></article>
+    <article class="kpi"><div class="kpi-top"><span class="kpi-label">Bénéfice net</span><span class="kpi-trend up">↑ 9.8%</span></div><div class="kpi-value">68 420 <em>DH</em></div><div class="kpi-foot muted">marge 48%</div></article>
+    <article class="kpi"><div class="kpi-top"><span class="kpi-label">Taux d'occupation</span><span class="kpi-trend up">↑ 4%</span></div><div class="kpi-value">76<em>%</em></div><div class="kpi-foot muted">moyenne flotte</div></article>
+    <article class="kpi"><div class="kpi-top"><span class="kpi-label">Panier moyen</span></div><div class="kpi-value">1 636 <em>DH</em></div><div class="kpi-foot muted">par location</div></article>
+  </section>
+
+  <!-- Charts -->
+  <section class="row row-2">
+    <div class="card">
+      <div class="card-head">
+        <div><h2>Évolution du CA</h2><p class="muted">12 derniers mois</p></div>
+      </div>
+      <div class="chart">
+        <svg viewBox="0 0 600 200" preserveAspectRatio="none" class="chart-svg">
+          <defs><linearGradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#ff7a18" stop-opacity=".35"/><stop offset="100%" stop-color="#ff7a18" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0,160 L50,150 L100,140 L150,110 L200,130 L250,90 L300,100 L350,70 L400,80 L450,55 L500,65 L550,40 L600,30 L600,200 L0,200 Z" fill="url(#g2)"/>
+          <path d="M0,160 L50,150 L100,140 L150,110 L200,130 L250,90 L300,100 L350,70 L400,80 L450,55 L500,65 L550,40 L600,30" stroke="#ff7a18" stroke-width="2.5" fill="none"/>
+        </svg>
+        <div class="chart-labels"><span>Jun</span><span>Aoû</span><span>Oct</span><span>Déc</span><span>Fév</span><span>Avr</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div><h2>Répartition par catégorie</h2><p class="muted">CA par segment</p></div></div>
+      <ul class="cat-list">
+        <li><span class="dot dot1"></span><strong>Premium & Luxe</strong><span class="pct">42%</span><div class="cat-bar"><div style="width:42%"></div></div><span class="amt muted">59 787 DH</span></li>
+        <li><span class="dot dot2"></span><strong>SUV</strong><span class="pct">28%</span><div class="cat-bar"><div style="width:28%;background:#ffb070"></div></div><span class="amt muted">39 858 DH</span></li>
+        <li><span class="dot dot3"></span><strong>Berlines</strong><span class="pct">18%</span><div class="cat-bar"><div style="width:18%;background:#0c0c0d"></div></div><span class="amt muted">25 623 DH</span></li>
+        <li><span class="dot dot4"></span><strong>Économiques</strong><span class="pct">12%</span><div class="cat-bar"><div style="width:12%;background:#6b6862"></div></div><span class="amt muted">17 082 DH</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Locations by city -->
+  <section class="card">
+    <div class="card-head"><div><h2>Performance par ville</h2><p class="muted">Mai 2026</p></div></div>
+    <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr><th>Ville</th><th>Locations</th><th>CA</th><th>Voitures actives</th><th>Taux d'occupation</th><th>Panier moyen</th><th>Évolution</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Casablanca</strong></td><td>32</td><td><strong>58 240 DH</strong></td><td>9</td><td>82%</td><td>1 820 DH</td><td><span class="trend up">↑ 15%</span></td></tr>
+          <tr><td><strong>Marrakech</strong></td><td>24</td><td><strong>41 100 DH</strong></td><td>6</td><td>78%</td><td>1 712 DH</td><td><span class="trend up">↑ 11%</span></td></tr>
+          <tr><td><strong>Rabat</strong></td><td>14</td><td><strong>21 850 DH</strong></td><td>4</td><td>72%</td><td>1 560 DH</td><td><span class="trend up">↑ 6%</span></td></tr>
+          <tr><td><strong>Tanger</strong></td><td>9</td><td><strong>12 350 DH</strong></td><td>3</td><td>68%</td><td>1 372 DH</td><td><span class="trend down">↓ 3%</span></td></tr>
+          <tr><td><strong>Agadir</strong></td><td>5</td><td><strong>5 950 DH</strong></td><td>1</td><td>65%</td><td>1 190 DH</td><td><span class="trend up">↑ 4%</span></td></tr>
+          <tr><td><strong>Fès</strong></td><td>3</td><td><strong>2 860 DH</strong></td><td>1</td><td>52%</td><td>953 DH</td><td><span class="trend down">↓ 8%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
